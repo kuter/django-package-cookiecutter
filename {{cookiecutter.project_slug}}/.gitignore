@@ -1,3 +1,9 @@
 *.pyc
 *.swp
 *.sqlite3
+*.ropeproject
+*.egg-info
+.coverage
+htmlcov/
+docs/build/
+dist/

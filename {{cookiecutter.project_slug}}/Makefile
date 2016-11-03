@@ -1,11 +1,14 @@
 run:
-	python manage.py runserver
+	python manage.py runserver 8000
 
 test:
 	python manage.py test
 
 coverage:
 	coverage run manage.py test && coverage html
+
+migrations:
+	python manage.py makemigrations {{ cookiecutter.project_slug }} && python manage.py migrate
 
 .PHONY: docs
 docs:

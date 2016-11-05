@@ -12,6 +12,9 @@ Class-based views
 Including another URLconf
     1. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+import debug_toolbar
+
+from django.conf import settings
 from django.conf.urls import include, url, patterns
 from django.contrib import admin
 from django.views.generic.base import RedirectView
@@ -19,16 +22,9 @@ from django.views.static import serve
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^__debug__/', include(debug_toolbar.urls)),
+    url(r'^docs/$', RedirectView.as_view(url='index.html')),
+    url(r'^coverage/$', RedirectView.as_view(url='index.html')),
+    url(r'^docs/(?P<path>.*)', serve, {'document_root': 'docs/build/html'}),
+    url(r'^coverage/(?P<path>.*)', serve, {'document_root': 'htmlcov'}),
 ]
-urlpatterns += patterns('',
-                        url(r'^docs/$',
-                            RedirectView.as_view(
-                                url='index.html')),
-                        url(r'^coverage/$',
-                            RedirectView.as_view(
-                                url='index.html')),
-                        url(r'^docs/(?P<path>.*)',
-                            serve, {'document_root': 'docs/build/html'}),
-                        url(r'^coverage/(?P<path>.*)',
-                            serve, {'document_root': 'htmlcov'}),
-                        )

@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sample_django_app',
+    '{{cookiecutter.project_slug}}',
     'debug_toolbar',
 )
 

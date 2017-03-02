@@ -23,5 +23,5 @@ docs:
 	cd docs/ && $(MAKE) clean && $(MAKE) html
 
 migrate:
-	python manage.py makemigrations articles
+	python manage.py makemigrations {{cookiecutter.project_slug}}
 	python manage.py migrate

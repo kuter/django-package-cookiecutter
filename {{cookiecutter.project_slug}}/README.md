@@ -1,3 +1,5 @@
+[![build status](http://gitlab/{{cookiecutter.full_name}}/{{cookiecutter.project_slug}}/badges/master/build.svg)](http://gitlab/{{cookiecutter.full_name}}/{{cookiecutter.project_slug}}/commits/master)
+[![coverage report](http://gitlab/{{cookiecutter.full_name}}/{{cookiecutter.project_slug}}/badges/master/coverage.svg)](http://gitlab/{{cookiecutter.full_name}}/{{cookiecutter.project_slug}}/commits/master)
 =====
 Polls
 =====

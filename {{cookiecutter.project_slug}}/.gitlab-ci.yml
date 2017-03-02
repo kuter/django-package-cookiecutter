@@ -1,4 +1,47 @@
-tests:
+before_script:
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh/
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+
+stages:
+    - test
+    - build
+    - dist
+    - deploy
+
+test:python:
+    stage: test
     script:
         - pip install -r requirements.txt
-        - python manage.py test
+        - make test
+    tags:
+        - python27
+ 
+build:
+    stage: build
+    script:
+        - make clean
+        - python setup.py sdist
+    tags:
+        - python27
+    artifacts:
+        paths:
+            - dist/
+dist:
+    stage: dist
+    when: manual
+    script:
+        - scp -r dist/* "user@host:"
+    tags:
+        - python27
+
+deploy:localhost:
+    stage: deploy
+    script:
+        - ssh user@host "touch restart.txt"
+    tags:
+        - python27
+    environment:
+        name: localhost
+        url: http://host/

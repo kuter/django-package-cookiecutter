@@ -1,25 +1,27 @@
 run:
 	python manage.py runserver 8000
 
+clean:
+	find . -type f -name '*.pyc' -delete
+	find . -type f -name '*.swp' -delete
+
 test:
 	python manage.py test
 
 coverage:
-	coverage run manage.py test && coverage html
+	coverage run manage.py test
+	coverage report
 
-migrations:
-	python manage.py makemigrations {{ cookiecutter.project_slug }} && python manage.py migrate
+html:
+	coverage html
+
+dist:
+	python setup sdist
 
 .PHONY: docs
 docs:
-	cd docs && make clean && make html
+	cd docs/ && $(MAKE) clean && $(MAKE) html
 
-clean:
-	find . -type d -name __pycache__ -exec rm -r {} \;
-	rm -r docs/build/*
-	rm -r htmlcov/
-	rm .coverage
-	find . -type f -name '*.pyc' -delete
-	find . -type f -name '*.swp' -delete
-	find . -type d -name .ropeproject -exec rm -r {} \;
-
+migrate:
+	python manage.py makemigrations articles
+	python manage.py migrate

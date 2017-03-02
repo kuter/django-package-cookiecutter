@@ -1,7 +1,7 @@
 import os
 from setuptools import find_packages, setup
 
-with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
+with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
     README = readme.read()
 
 # allow setup.py to be run from any path
@@ -14,7 +14,6 @@ setup(
     packages=find_packages(exclude=["*.swp"]),
     install_requires=[
         'Django',
-        'django-ckeditor',
     ],
     include_package_data=True,
     license='{{cookiecutter.open_source_license}}',  # example license

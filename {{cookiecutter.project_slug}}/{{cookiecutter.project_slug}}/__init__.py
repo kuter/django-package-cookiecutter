@@ -61,4 +61,5 @@ Templates
 
 
 """
+__version__ = '0.0.0'
 default_app_config = '{{cookiecutter.project_slug}}.apps.{{cookiecutter.project_slug|title}}Config'

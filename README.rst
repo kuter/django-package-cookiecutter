@@ -31,6 +31,8 @@ Run Django project:
 
 .. code:: bash
     
+    $ cd blog
+    $ pip install -r requirements/local.txt
     $ python manage.py makemigrations blog
     $ python manage.py migrate
     $ python manage.py createsuperuser

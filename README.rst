@@ -1,5 +1,5 @@
-django-plugin-template-cookiecutter
-===================================
+django-package-cookiecutter
+==========================
 
 Django third-party app cookiecutter template for Django 2.0.x
 
@@ -14,7 +14,7 @@ Creating app template:
 
 .. code:: bash
 
-    $ cookiecutter https://github.com/kuter/django-plugin-template-cookiecutter                                                                                                                                                     
+    $ cookiecutter https://github.com/kuter/django-package-cookiecutter
     full_name [user]: kuter        
     project_name [Sample Django app]: Blog
     project_slug [blog]: blog

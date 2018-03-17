@@ -23,7 +23,8 @@ Creating app template:
     2 - BSD license
     3 - ISC license
     4 - Apache Software License 2.0
-    5 - GNU General Public License v3                                                                                                                                                                                                                                             6 - Not open source
+    5 - GNU General Public License v3
+    6 - Not open source
     Choose from 1, 2, 3, 4, 5, 6 [1]: 1
 
 Usage:

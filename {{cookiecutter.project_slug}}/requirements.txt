@@ -1,5 +1,0 @@
-Django==1.8.17
-Sphinx==1.4.8
-coverage==4.2
-django-debug-toolbar==1.6
-sphinxcontrib-programoutput==0.8

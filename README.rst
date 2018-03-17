@@ -7,7 +7,7 @@ Installation:
 
 .. code:: bash
 
-    $ mkvirtualenv testapp
+    $ mkvirtualenv blog
     $ pip install cookiecutter
 
 Creating app template:
@@ -27,11 +27,11 @@ Creating app template:
     6 - Not open source
     Choose from 1, 2, 3, 4, 5, 6 [1]: 1
 
-Usage:
+Run Django project:
 
 .. code:: bash
-
-    $ make run
-    $ make test
-    $ make docs
-    $ make coverage
+    
+    $ python manage.py makemigrations blog
+    $ python manage.py migrate
+    $ python manage.py createsuperuser
+    $ python manage.py runserver

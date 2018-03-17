@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{{cookiecutter.project_slug|title}}ListView</title>
+    </head>
+    <body>
+        <h1>{{cookiecutter.project_name}}</h1>
+        {% raw %}
+        {% for object in object_list %}
+            <li>{{ object }}</li>
+        {% empty %}
+            <li>No objects found.</li>
+        {% endfor %}
+        {% endraw %}
+    </body>
+</html>

@@ -13,7 +13,7 @@ setup(
     version='0.0.0',
     packages=find_packages(exclude=["*.swp"]),
     install_requires=[
-        'Django',
+        'Django>=2.0.3',
     ],
     include_package_data=True,
     license='{{cookiecutter.open_source_license}}',  # example license
@@ -24,12 +24,11 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.8.15',  # replace "X.Y" as appropriate
+        'Framework :: Django :: 2.0.3',  # replace "X.Y" as appropriate
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',  # example license
+        'License :: OSI Approved :: {{cookiecutter.open_source_license}}',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        # Replace these appropriately if you are stuck on Python 2.
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',

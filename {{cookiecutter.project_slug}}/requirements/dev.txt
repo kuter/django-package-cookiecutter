@@ -1,0 +1,5 @@
+-r base.txt
+Sphinx>=1.7.1
+bumpversion>=0.5.3
+coverage>=4.5.1
+factory-boy>=2.10.0

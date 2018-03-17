@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
 from django.db import models
 
 
 class {{cookiecutter.project_slug|title}}(models.Model):
 
-    u""" {{cookiecutter.project_slug|title}} documentation. """
+    """{{cookiecutter.project_slug|title}} documentation."""
 
     name = models.CharField(max_length=50)
 

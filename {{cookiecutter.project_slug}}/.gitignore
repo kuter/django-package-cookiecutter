@@ -1,9 +1,9 @@
-*.pyc
-*.swp
-*.sqlite3
-*.ropeproject
 *.egg-info
+*.pyc
+*.ropeproject
+*.sqlite3
+*.swp
 .coverage
-htmlcov/
-docs/build/
 dist/
+docs/build/
+htmlcov/

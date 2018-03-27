@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 from django.test import TestCase
-from ..models import {{cookiecutter.project_slug|title}}
+from ..models import {{cookiecutter.model}}
 
 
-class {{cookiecutter.project_slug|title}}Tests(TestCase):
+class {{cookiecutter.model}}Tests(TestCase):
 
-    u"""Test class for {{cookiecutter.project_slug|title}}."""
+    u"""Test class for {{cookiecutter.model}}."""
 
     def setUp(self):
-        u"""Setup for {{cookiecutter.project_slug|title}}."""
-        self.obj = {{cookiecutter.project_slug|title}}()
+        u"""Setup for {{cookiecutter.model}}."""
+        self.obj = {{cookiecutter.model}}()
 
     def test_isinstance(self):
         u"""Test for isinstance method."""
-        self.assertTrue(isinstance(self.obj, {{cookiecutter.project_slug|title}}))
+        self.assertTrue(isinstance(self.obj, {{cookiecutter.model}}))

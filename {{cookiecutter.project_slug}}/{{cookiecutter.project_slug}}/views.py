@@ -1,17 +1,17 @@
 from django.views.generic import DetailView, ListView
 
-from .models import {{cookiecutter.project_slug|title}}
+from .models import {{cookiecutter.model}}
 
 
-class {{cookiecutter.project_slug|title}}DetailView(DetailView):
+class {{cookiecutter.model}}DetailView(DetailView):
 
-    """{{cookiecutter.project_slug|title}}ListView documentation."""
+    """{{cookiecutter.model}}ListView documentation."""
 
-    model = {{cookiecutter.project_slug|title}}
+    model = {{cookiecutter.model}}
 
 
-class {{cookiecutter.project_slug|title}}ListView(ListView):
+class {{cookiecutter.model}}ListView(ListView):
 
-    """{{cookiecutter.project_slug|title}}ListView documentation."""
+    """{{cookiecutter.model}}ListView documentation."""
 
-    model = {{cookiecutter.project_slug|title}}
+    model = {{cookiecutter.model}}

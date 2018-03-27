@@ -1,12 +1,12 @@
 from django.db import models
 
 
-class {{cookiecutter.project_slug|title}}(models.Model):
+class {{cookiecutter.model}}(models.Model):
 
-    """{{cookiecutter.project_slug|title}} documentation."""
+    """{{cookiecutter.model}} documentation."""
 
     name = models.CharField(max_length=50)
 
     class Meta:
-        verbose_name = "{{cookiecutter.project_slug|title}}"
-        verbose_name_plural = "{{cookiecutter.project_slug|title}}s"
+        verbose_name = "{{cookiecutter.model}}"
+        verbose_name_plural = "{{cookiecutter.model}}s"

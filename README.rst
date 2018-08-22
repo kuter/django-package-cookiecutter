@@ -1,7 +1,7 @@
 django-package-cookiecutter
 ==========================
 
-Django third-party app cookiecutter template for Django 2.0.x
+Django third-party app cookiecutter template for Django 2.1
 
 Installation:
 
@@ -14,7 +14,7 @@ Creating app template:
 
 .. code:: bash
 
-    $ cookiecutter -c 2.0.x https://github.com/kuter/django-package-cookiecutter
+    $ cookiecutter https://github.com/kuter/django-package-cookiecutter
     full_name [user]: kuter        
     project_name [Sample Django app]: Blog
     project_slug [blog]: blog
@@ -22,7 +22,7 @@ Creating app template:
     1 - MIT license
     2 - BSD license
     3 - ISC license
-    4 - Apache Software License 2.0
+    4 - Apache Software License 2.1
     5 - GNU General Public License v3
     6 - Not open source
     Choose from 1, 2, 3, 4, 5, 6 [1]: 1

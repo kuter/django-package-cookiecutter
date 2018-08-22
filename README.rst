@@ -14,7 +14,7 @@ Creating app template:
 
 .. code:: bash
 
-    $ cookiecutter https://github.com/kuter/django-package-cookiecutter
+    $ cookiecutter -c 2.0.x https://github.com/kuter/django-package-cookiecutter
     full_name [user]: kuter        
     project_name [Sample Django app]: Blog
     project_slug [blog]: blog

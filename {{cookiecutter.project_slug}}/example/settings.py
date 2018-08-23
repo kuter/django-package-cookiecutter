@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    {% if cookiecutter.rest_framework == 'yes' %}'rest_framework',{% endif %}
     '{{cookiecutter.project_slug}}',
 ]
 

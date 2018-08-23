@@ -3,5 +3,6 @@
   "project_name": "Sample Django app",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
   "model": "{{ cookiecutter.project_slug.title() }}",
-  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
+  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
+  "rest_framework": ["no", "yes"]
 }

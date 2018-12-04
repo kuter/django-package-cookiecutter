@@ -14,7 +14,6 @@ setup(
     packages=find_packages(exclude=["*.swp"]),
     install_requires=[
         'Django >=2.1,<2.2',
-        {% if cookiecutter.rest_framework == 'yes' %}'djangorestframework>=3.8.2',{% endif %}
     ],
     include_package_data=True,
     license='{{cookiecutter.open_source_license}}',  # example license

@@ -26,10 +26,6 @@ Creating app template:
     5 - GNU General Public License v3
     6 - Not open source
     Choose from 1, 2, 3, 4, 5, 6 [1]: 1
-    Select rest_framework:
-    1 - no
-    2 - yes
-    Choose from 1, 2 [1]: 2
 
 
 Run Django project:

@@ -1,2 +1,1 @@
 Django <2.2,>=2.1
-{% if cookiecutter.rest_framework == 'yes' %}djangorestframework>=3.8.2{% endif %}

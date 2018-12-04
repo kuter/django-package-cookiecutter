@@ -3,14 +3,16 @@ django-package-cookiecutter
 
 Django third-party app cookiecutter template for Django 2.1
 
-Installation:
+Installation
+------------
 
 .. code:: bash
 
     $ mkvirtualenv blog
     $ pip install cookiecutter
 
-Creating app template:
+Creating app template
+---------------------
 
 .. code:: bash
 
@@ -28,7 +30,8 @@ Creating app template:
     Choose from 1, 2, 3, 4, 5, 6 [1]: 1
 
 
-Run Django project:
+Run Django project
+------------------
 
 .. code:: bash
     
@@ -39,20 +42,25 @@ Run Django project:
     $ python manage.py createsuperuser
     $ python manage.py runserver
 
-Generate documentation and run with your Web browser:
+Generate documentation and run with your Web browser
+----------------------------------------------------
 
 .. code:: bash
 
    $ make docs
    $ xdg-open docs/build/html/index.html
 
-Run tests and generate coverage:
+Run tests and generate coverage
+-------------------------------
 
 .. code:: bash
+
    $ make coverage
    $ xdg-open htmlcov/index.html
 
-To check against python coding standards run:
+To check against python coding standards run
+--------------------------------------------
 
 .. code:: bash
+
    $ make check

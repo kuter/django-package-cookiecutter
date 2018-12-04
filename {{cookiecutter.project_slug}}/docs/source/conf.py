@@ -1,21 +1,17 @@
 # -*- coding: utf-8 -*-
-#
-# Configuration file for the Sphinx documentation builder.
-#
-# This file does only contain a selection of the most common options. For a
-# full list see the documentation:
-# http://www.sphinx-doc.org/en/stable/config
+import inspect
+import os
+import sys
 
-# -- Path setup --------------------------------------------------------------
+from django.core.wsgi import get_wsgi_application  # noqa
+from django.utils.encoding import force_text  # noqa
+from django.utils.html import strip_tags  # noqa
 
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
 # sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('../../'))
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "example.settings")
+get_wsgi_application()
 
 # -- Project information -----------------------------------------------------
 
@@ -44,6 +40,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
+    'sphinxcontrib.programoutput',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -106,7 +103,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = '{{cookiecutter.project_name}}doc'
+htmlhelp_basename = '{{cookiecutter.project_name}} doc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -166,3 +163,47 @@ texinfo_documents = [
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
+
+
+THIS_DIR = os.path.dirname(__file__)
+PROJECT_DIR = os.path.join(THIS_DIR, '../')
+sys.path.append(PROJECT_DIR)
+
+
+def process_docstring(app, what, name, obj, options, lines):
+    """" Causes import errors if left outside the function. """
+    from django.db import models
+
+    # Only look at objects that inherit from Django's base model class
+    if inspect.isclass(obj) and issubclass(obj, models.Model):
+        # Grab the field list from the meta class
+        fields = obj._meta.fields
+
+        for field in fields:
+            # Decode and strip any html out of the field's help text
+            help_text = strip_tags(force_text(field.help_text))
+
+            # Decode and capitalize the verbose name, for use if there isn't
+            # any help text
+            verbose_name = force_text(field.verbose_name).capitalize()
+
+            if help_text:
+                # Add the model field to the end of the docstring as a param
+                # using the help text as the description
+                lines.append(u':param %s: %s' % (field.attname, help_text))
+            else:
+                # Add the model field to the end of the docstring as a param
+                # using the verbose name as the description
+                lines.append(u':param %s: %s' % (field.attname, verbose_name))
+
+            # Add the field's type to the docstring
+            lines.append(u':type %s: %s' % (
+                field.attname, type(field).__name__))
+
+    # Return the extended docstring
+    return lines
+
+
+def setup(app):
+    """ Register the docstring processor with sphinx. """
+    app.connect('autodoc-process-docstring', process_docstring)

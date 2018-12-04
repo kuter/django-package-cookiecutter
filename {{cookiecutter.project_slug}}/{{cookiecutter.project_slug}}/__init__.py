@@ -47,5 +47,10 @@ Views
 .. automodule:: {{cookiecutter.project_slug}}.views
     :members:
     :show-inheritance:
+
+Templates
+---------
+
+.. program-output:: tree ../../{{cookiecutter.project_slug}}/templates/
 """
 __version__ = '0.0.0'

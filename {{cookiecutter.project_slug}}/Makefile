@@ -2,26 +2,22 @@ run:
 	python manage.py runserver 8000
 
 test:
-	python manage.py test
+	coverage run manage.py test
 
 migrate:
 	python manage.py makemigrations {{cookiecutter.project_slug}}
 	python manage.py migrate
 
-coverage:
-	coverage run manage.py test
-	coverage report
-
-html:
-	coverage html
-
 dist:
 	python setup.py sdist
 
-.PHONY: docs check flake8 isort pydocstyle bandit
+.PHONY: docs check flake8 isort pydocstyle bandit test
 docs:
 	cd docs/ && $(MAKE) clean && $(MAKE) html
 
+coverage: test
+	coverage report
+	coverage html
 
 flake8:
 	@echo 'Check flake8 ..'

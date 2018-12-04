@@ -38,3 +38,21 @@ Run Django project:
     $ python manage.py migrate
     $ python manage.py createsuperuser
     $ python manage.py runserver
+
+Generate documentation and run with your Web browser:
+
+.. code:: bash
+
+   $ make docs
+   $ xdg-open docs/build/html/index.html
+
+Run tests and generate coverage:
+
+.. code:: bash
+   $ make coverage
+   $ xdg-open htmlcov/index.html
+
+To check against python coding standards run:
+
+.. code:: bash
+   $ make check

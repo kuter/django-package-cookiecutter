@@ -1,0 +1,12 @@
+{% if cookiecutter.source_control == 'mercurial' %}syntax:glob{% endif %}
+*.egg-info/
+*.log
+*.orig
+*.py[co]
+*.ropeproject/*
+*.sqlite3
+*.sw[oprs]
+.coverage
+docs/build/
+htmlcov/
+local_settings.py

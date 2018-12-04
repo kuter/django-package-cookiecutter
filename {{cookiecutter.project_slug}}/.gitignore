@@ -1,9 +1,0 @@
-*.egg-info
-*.pyc
-*.ropeproject
-*.sqlite3
-*.swp
-.coverage
-dist/
-docs/build/
-htmlcov/

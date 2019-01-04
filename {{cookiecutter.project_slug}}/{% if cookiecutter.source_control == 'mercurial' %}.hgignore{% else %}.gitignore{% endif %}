@@ -7,6 +7,7 @@
 *.sqlite3
 *.sw[oprs]
 .coverage
+.tox/
 docs/build/
 htmlcov/
 local_settings.py

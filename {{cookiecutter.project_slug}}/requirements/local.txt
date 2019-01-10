@@ -1,4 +1,4 @@
 -r dev.txt
+-r docs.txt
+-r tests.txt
 django-debug-toolbar>=1.9.1
-flake8>=3.5.0
-pylint>=1.8.3

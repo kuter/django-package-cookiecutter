@@ -1,5 +1,5 @@
 django-package-cookiecutter
-==========================
+===========================
 
 Django third-party app cookiecutter template for Django 2.1
 

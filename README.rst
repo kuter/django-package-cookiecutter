@@ -64,3 +64,20 @@ To check against python coding standards run
 .. code:: bash
 
    $ make check
+
+Running application in Docker
+-----------------------------
+
+.. code:: bash
+
+   $ docker build -t blog .
+   $ docker run -it blog
+
+Running tests with docker-compose
+---------------------------------
+
+.. code:: bash
+
+   $ docker-compose run test
+
+

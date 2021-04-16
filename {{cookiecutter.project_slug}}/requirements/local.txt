@@ -1,4 +1,4 @@
 -r dev.txt
 -r docs.txt
 -r tests.txt
-django-debug-toolbar==1.9.1
+django-debug-toolbar==1.11.1
